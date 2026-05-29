@@ -55,7 +55,7 @@ export function Location() {
           >
             <iframe
               title="Raj Rajeshwari Haveli Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.8776064215997!2d75.7871266!3d26.8671324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db448d5c00001%3A0x1c3c7a5c5c5c5c5c!2sRaj%20Rajeshwari%20Haveli!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.951712435145!2d75.74169!3d26.918856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dbfbb71234567%3A0x0a1b2c3d4e5f6789!2s24%20Ramayan%20Marg%2C%20Jaipur!5e0!3m2!1sen!2sin!4v1234567890"
               className="w-full h-full border-0"
               allowFullScreen
               loading="lazy"
@@ -76,9 +76,9 @@ export function Location() {
                     Our Address
                   </h3>
                   <p className="font-lato text-charcoal/70 leading-relaxed">
-                    24, Parivahan Nagar Road,<br />
-                    Chinkara Colony, Khatipura,<br />
-                    Jaipur 302012, Rajasthan
+                    24 Ramayan Marg,<br />
+                    Jaipur 302012, Rajasthan,<br />
+                    India
                   </p>
                 </div>
               </div>

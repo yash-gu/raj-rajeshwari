@@ -1,13 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Sparkles } from 'lucide-react';
+import hero1 from '../assets/images/hero-1.jpg';
+import hero2 from '../assets/images/hero-2.jpg';
+import hero3 from '../assets/images/hero-3.jpg';
+import hero4 from '../assets/images/hero-4.jpg';
+import hero5 from '../assets/images/hero-5.jpg';
 
 const heroImages = [
-  'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1600&q=80',
-  'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80',
-  'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80',
-  'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=1600&q=80',
-  'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&q=80',
+  hero1,
+  hero2,
+  hero3,
+  hero4,
+  hero5,
 ];
 
 export function Hero() {

@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Star, Calendar, Building2, Award } from 'lucide-react';
+import { Star, Calendar, Building2 } from 'lucide-react';
 
 const stats = [
-  { icon: Star, value: 8.5, suffix: '/10', label: 'Booking.com Rating', displayValue: '8.5' },
-  { icon: Building2, value: 9, suffix: '+', label: 'Heritage Rooms', displayValue: '9+' },
+  { icon: Star, value: 5, suffix: '/5', label: 'TripAdvisor Rating', displayValue: '5.0' },
+  { icon: Star, value: 23, suffix: '', label: 'Guest Reviews', displayValue: '23' },
   { icon: Calendar, value: 2019, suffix: '', label: 'Established', displayValue: '2019' },
-  { icon: Award, value: 0, suffix: '', label: 'TripAdvisor Top Rated', displayValue: 'Top Rated' },
+  { icon: Building2, value: 9, suffix: '+', label: 'Heritage Rooms', displayValue: '9+' },
 ];
 
 function AnimatedCounter({ value, suffix, displayValue }: { value: number; suffix: string; displayValue: string }) {
@@ -34,13 +34,18 @@ function AnimatedCounter({ value, suffix, displayValue }: { value: number; suffi
     }
   }, [isInView, value]);
 
-  if (displayValue === 'Top Rated') {
-    return <span>{displayValue}</span>;
+  if (displayValue) {
+    return (
+      <span ref={ref}>
+        {displayValue}
+        {suffix}
+      </span>
+    );
   }
 
   return (
     <span ref={ref}>
-      {value === 8.5 || value === 2019 ? displayValue : Math.floor(count)}
+      {Math.floor(count)}
       {suffix}
     </span>
   );

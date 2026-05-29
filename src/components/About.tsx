@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Castle, Heart, UtensilsCrossed } from 'lucide-react';
+import aboutImage from '../assets/images/about-1.jpg';
 
 const usps = [
   { icon: Castle, title: 'Heritage Architecture', desc: 'Authentic Rajput design' },
@@ -24,7 +25,7 @@ export function About() {
           >
             <div className="relative rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80"
+                src={aboutImage}
                 alt="Raj Rajeshwari Haveli courtyard"
                 className="w-full h-[400px] lg:h-[600px] object-cover"
               />
@@ -55,8 +56,9 @@ export function About() {
               is a living heritage property owned by Thakur Dilip Singh of the Chouhan Rajput
               family. With its marble floors, stained glass windows, soaring ceilings, and
               palatial furnishings, the Haveli transports guests to a world of royal Rajasthani
-              grandeur - without ever sacrificing modern comfort. Guests are not just welcomed;
-              they are treated as royalty.
+              grandeur - without ever sacrificing modern comfort. Ranked 5.0/5 on Tripadvisor
+              from 23 guest reviews, visitors consistently praise the authentic hospitality
+              and curated heritage experience.
             </p>
 
             <div className="grid grid-cols-3 gap-4">

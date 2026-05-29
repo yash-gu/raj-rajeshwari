@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import diningImage from '../assets/images/gallery-4.jpg';
 
 const tags = [
   'Buffet Breakfast',
@@ -66,7 +67,7 @@ export function Dining() {
           >
             <div className="rounded-lg overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
+                src={diningImage}
                 alt="Fine dining at Raj Rajeshwari Haveli"
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />

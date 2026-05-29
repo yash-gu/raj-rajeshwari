@@ -5,8 +5,6 @@ import {
   Car,
   Plane,
   Clock,
-  Sun,
-  Flame,
   Users,
   ConciergeBell,
   UtensilsCrossed,
@@ -16,18 +14,16 @@ import {
 } from 'lucide-react';
 
 const amenities = [
-  { icon: Wifi, name: 'Free WiFi' },
+  { icon: Wifi, name: 'Free High Speed Internet (WiFi)' },
   { icon: Car, name: 'Free Parking' },
-  { icon: Plane, name: 'Airport Transfer' },
   { icon: Clock, name: '24hr Front Desk' },
-  { icon: Sun, name: 'Sun Terrace' },
-  { icon: Flame, name: 'Outdoor Fireplace' },
-  { icon: Users, name: 'Banquet Hall' },
+  { icon: UtensilsCrossed, name: 'Free Breakfast' },
   { icon: ConciergeBell, name: 'Concierge Service' },
-  { icon: UtensilsCrossed, name: 'Room Service' },
-  { icon: Banknote, name: 'Currency Exchange' },
+  { icon: Banknote, name: 'Best Price Guarantee' },
   { icon: MapPin, name: 'Tour Desk' },
   { icon: Shirt, name: 'Laundry Service' },
+  { icon: Plane, name: 'Airport Transfer' },
+  { icon: Users, name: 'Yoga Classes' },
 ];
 
 export function Amenities() {

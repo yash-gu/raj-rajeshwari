@@ -13,11 +13,14 @@ import {
   Castle,
   Home,
 } from 'lucide-react';
+import room1 from '../assets/images/gallery-1.jpg';
+import room2 from '../assets/images/gallery-2.jpg';
+import room3 from '../assets/images/gallery-3.jpg';
 
 const rooms = [
   {
     name: 'King Room',
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
+    image: room1,
     size: '40 sq m',
     view: 'City View',
     beds: '1 King Bed',
@@ -27,7 +30,7 @@ const rooms = [
   },
   {
     name: 'Queen Room',
-    image: 'https://images.unsplash.com/photo-1560347876-aeef00ee58a1?w=800&q=80',
+    image: room2,
     size: '30 sq m',
     view: 'City View',
     beds: '1 Large Bed',
@@ -37,7 +40,7 @@ const rooms = [
   },
   {
     name: 'Standard Double Room',
-    image: 'https://images.unsplash.com/photo-1506059612708-99d6c258160e?w=800&q=80',
+    image: room3,
     size: '23 sq m',
     view: 'Courtyard View',
     beds: '1 Double Bed',
@@ -147,6 +150,7 @@ export function Rooms() {
                         key={feature}
                         className="flex items-center gap-1 bg-beige px-2 py-1 rounded text-xs font-lato text-charcoal/80"
                       >
+                        <Icon className="w-3 h-3 text-gold" />
                         {feature}
                       </span>
                     );

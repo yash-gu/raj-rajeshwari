@@ -1,20 +1,22 @@
 import { useState, useRef } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, Expand } from 'lucide-react';
+import gallery1 from '../assets/images/gallery-1.jpg';
+import gallery2 from '../assets/images/gallery-2.jpg';
+import gallery3 from '../assets/images/gallery-3.jpg';
+import gallery4 from '../assets/images/gallery-4.jpg';
+import gallery5 from '../assets/images/hero-3.jpg';
+import gallery6 from '../assets/images/hero-4.jpg';
+import gallery7 from '../assets/images/hero-5.jpg';
 
 const galleryImages = [
-  { url: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80', alt: 'Haveli exterior' },
-  { url: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=80', alt: 'Pool area' },
-  { url: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80', alt: 'Luxury suite' },
-  { url: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=600&q=80', alt: 'Resort view' },
-  { url: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80', alt: 'Beachfront' },
-  { url: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80', alt: 'Hotel lobby' },
-  { url: 'https://images.unsplash.com/photo-1618245318763-453825cd2309?w=600&q=80', alt: 'Spa area' },
-  { url: 'https://images.unsplash.com/photo-1601918774946-25832a4be0d6?w=600&q=80', alt: 'Restaurant' },
-  { url: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=600&q=80', alt: 'Garden' },
-  { url: 'https://images.unsplash.com/photo-1595576508898-0ad5c879a061?w=600&q=80', alt: 'Night view' },
-  { url: 'https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=600&q=80', alt: 'Architecture' },
-  { url: 'https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?w=600&q=80', alt: 'Interior design' },
+  { url: gallery1, alt: 'Entry courtyard' },
+  { url: gallery2, alt: 'Heritage suite' },
+  { url: gallery3, alt: 'Royal interior lounge' },
+  { url: gallery4, alt: 'Dining hall' },
+  { url: gallery5, alt: 'Bedroom details' },
+  { url: gallery6, alt: 'Royal lounge seating' },
+  { url: gallery7, alt: 'Architectural detail' },
 ];
 
 export function Gallery() {
