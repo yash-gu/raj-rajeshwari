@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import {
   BedDouble,
@@ -12,6 +12,11 @@ import {
   Laptop,
   Castle,
   Home,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Info,
+  Sparkles,
 } from 'lucide-react';
 import room1 from '../assets/images/gallery-1.jpg';
 import room2 from '../assets/images/gallery-2.jpg';
@@ -21,32 +26,41 @@ const rooms = [
   {
     name: 'King Room',
     image: room1,
+    images: [room1, room2, room3],
     size: '40 sq m',
-    view: 'City View',
-    beds: '1 King Bed',
+    view: 'Heritage Courtyard View',
+    beds: '1 Royal King Bed',
     sleeps: 2,
-    features: ['AC', 'LED TV', 'Balcony', 'Bathrobe', 'Free WiFi', 'PC Workspace', 'Coffee Maker'],
-    price: 'From INR 4,500/night',
+    price: 'INR 4,500',
+    shortDesc: 'A majestic sanctuary blending heritage Rajput layout elements with modern premium comfort.',
+    longDesc: 'The King Room is the crown jewel of our accommodations. It features tall arched ceilings, stained glass accents, and classic Rajasthani murals, combined with a separate seating lounge and study desk. Experience premium ventilation and grand windows overlooking the central haveli courtyard.',
+    features: ['AC', 'LED TV', 'Balcony', 'Bathrobe', 'Free WiFi', 'PC Workspace', 'Coffee Maker', 'Premium Toiletries', 'Heritage Furnishings'],
   },
   {
     name: 'Queen Room',
     image: room2,
+    images: [room2, room1, room3],
     size: '30 sq m',
-    view: 'City View',
-    beds: '1 Large Bed',
+    view: 'Scenic Jaipur City View',
+    beds: '1 Large Queen Bed',
     sleeps: 2,
-    features: ['AC', 'LED TV', 'Balcony', 'Bathrobe', 'Free WiFi', 'Dressing Area'],
-    price: 'From INR 3,500/night',
+    price: 'INR 3,500',
+    shortDesc: 'A beautiful room featuring hand-selected antique furnishings and a peaceful atmosphere.',
+    longDesc: 'Designed for comfort and character, the Queen Room is decorated with local block prints and detailed wood carvings. Enjoy standard modern amenities along with an exquisite seating nook perfect for reading, overlooking the historic streets of Jaipur.',
+    features: ['AC', 'LED TV', 'Balcony', 'Bathrobe', 'Free WiFi', 'Dressing Area', 'Standard Toiletries', 'Traditional Bolsters'],
   },
   {
     name: 'Standard Double Room',
     image: room3,
+    images: [room3, room2, room1],
     size: '23 sq m',
-    view: 'Courtyard View',
+    view: 'Quiet Haveli Garden View',
     beds: '1 Double Bed',
     sleeps: 2,
-    features: ['AC', 'LED TV', 'Private Bathroom', 'Free WiFi', 'Daily Housekeeping'],
-    price: 'From INR 2,500/night',
+    price: 'INR 2,500',
+    shortDesc: 'A cozy retreat offering absolute peace, ideal for solo travelers or couples.',
+    longDesc: 'Our Standard Double Room combines essential comforts with elegant traditional touches. Impeccably clean and quiet, it features custom local drapery, garden perspectives, and simple handcrafted wood details that guarantee a restful heritage stay.',
+    features: ['AC', 'LED TV', 'Private Bathroom', 'Free WiFi', 'Daily Housekeeping', 'Hot Water Kettle', 'Handmade Soaps'],
   },
 ];
 
@@ -61,118 +75,326 @@ const featureIcons: Record<string, React.ElementType> = {
   'Dressing Area': Castle,
   'Private Bathroom': Bath,
   'Daily Housekeeping': BedDouble,
+  'Premium Toiletries': Bath,
+  'Traditional Bolsters': BedDouble,
+  'Heritage Furnishings': Castle,
+  'Standard Toiletries': Bath,
+  'Hot Water Kettle': Coffee,
+  'Handmade Soaps': Bath,
 };
 
 export function Rooms() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  
+  const [selectedRoom, setSelectedRoom] = useState<typeof rooms[0] | null>(null);
+  const [modalImageIdx, setModalImageIdx] = useState(0);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  const openDetails = (room: typeof rooms[0]) => {
+    setSelectedRoom(room);
+    setModalImageIdx(0);
+  };
+
+  useEffect(() => {
+    if (selectedRoom && dialogRef.current) {
+      dialogRef.current.showModal();
+    }
+  }, [selectedRoom]);
+
+  const closeDetails = () => {
+    if (dialogRef.current) {
+      dialogRef.current.close();
+    }
+    setSelectedRoom(null);
+  };
+
+  // Light-dismiss click outside fallback for non-supported browsers
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    const handleBackdropClick = (event: MouseEvent) => {
+      if (!('closedBy' in HTMLDialogElement.prototype)) {
+        if (event.target === dialog) {
+          const rect = dialog.getBoundingClientRect();
+          const isDialogContent = (
+            rect.top <= event.clientY &&
+            event.clientY <= rect.top + rect.height &&
+            rect.left <= event.clientX &&
+            event.clientX <= rect.left + rect.width
+          );
+          if (!isDialogContent) {
+            closeDetails();
+          }
+        }
+      }
+    };
+
+    // Close on dialog escape or cancel events natively
+    const handleCloseEvent = () => {
+      setSelectedRoom(null);
+    };
+
+    dialog.addEventListener('click', handleBackdropClick);
+    dialog.addEventListener('close', handleCloseEvent);
+    
+    return () => {
+      dialog.removeEventListener('click', handleBackdropClick);
+      dialog.removeEventListener('close', handleCloseEvent);
+    };
+  }, [selectedRoom]);
+
+  const selectAndBook = (roomName: string) => {
+    // Notify the quick book bar state
+    const event = new CustomEvent('quick-book', {
+      detail: {
+        roomType: roomName,
+        checkIn: '',
+        checkOut: '',
+        guests: '2',
+      }
+    });
+    window.dispatchEvent(event);
+    closeDetails();
+    
+    // Smooth scroll to the contact form
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section id="rooms" className="py-20 bg-cream">
-      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="rooms" className="py-24 bg-cream relative">
+      <div className="absolute inset-0 bg-gold-glow pointer-events-none" />
+
+      <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            className="text-gold font-lato text-sm tracking-[0.2em] uppercase font-semibold"
-          >
-            ACCOMMODATIONS
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.1 }}
-            className="font-playfair text-4xl lg:text-5xl font-bold text-charcoal mt-4 mb-6"
-          >
-            Royal Accommodations
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.2 }}
-            className="font-lato text-lg text-charcoal/70 max-w-2xl mx-auto"
-          >
-            Each room is a palatial retreat, richly furnished and impeccably maintained
-          </motion.p>
+          <span className="text-gold font-lato text-xs sm:text-sm tracking-[0.3em] uppercase font-semibold flex items-center justify-center gap-2">
+            <Sparkles className="w-3.5 h-3.5" /> ACCOMMODATIONS <Sparkles className="w-3.5 h-3.5" />
+          </span>
+          <h2 className="font-playfair text-4xl lg:text-5xl font-bold text-charcoal mt-4 mb-4">
+            Royal Suites & Chambers
+          </h2>
+          <div className="arch-divider mx-auto max-w-[200px] mb-6" />
+          <p className="font-lato text-base sm:text-lg text-charcoal/70 max-w-2xl mx-auto">
+            Each space is individually configured and decorated with Rajput relics, offering a true historic residency.
+          </p>
         </div>
 
+        {/* Rooms Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {rooms.map((room, index) => (
             <motion.div
               key={room.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 + index * 0.15 }}
-              className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-2 border-transparent hover:border-gold"
+              transition={{ delay: 0.2 + index * 0.15, duration: 0.6 }}
+              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-beige hover:border-gold relative flex flex-col justify-between"
             >
-              <div className="relative overflow-hidden h-56">
-                <img
-                  src={room.image}
-                  alt={room.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4 bg-gold text-charcoal px-3 py-1 rounded-full text-sm font-lato font-semibold">
-                  {room.price}
+              <div>
+                <div className="relative overflow-hidden h-60">
+                  <img
+                    src={room.image}
+                    alt={room.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute top-4 right-4 bg-maroon text-gold border border-gold/40 px-3.5 py-1.5 rounded-full text-xs font-lato font-bold tracking-wide shadow-md">
+                    {room.price}/night
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <button
+                      onClick={() => openDetails(room)}
+                      className="bg-gold text-charcoal text-xs font-lato font-bold px-4 py-2 rounded flex items-center gap-1.5 hover:bg-gold-light transition-all"
+                    >
+                      <Info className="w-4 h-4" /> Room Details
+                    </button>
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                <div className="p-6">
+                  <h3 className="font-playfair text-2xl font-bold text-charcoal mb-2 group-hover:text-maroon transition-colors">
+                    {room.name}
+                  </h3>
+                  <p className="font-lato text-sm text-charcoal/70 mb-4 leading-relaxed">
+                    {room.shortDesc}
+                  </p>
+
+                  <div className="flex items-center gap-4 text-charcoal/60 mb-5 border-t border-beige pt-4">
+                    <div className="flex items-center gap-1">
+                      <Maximize2 className="w-4 h-4 text-gold" />
+                      <span className="font-lato text-xs">{room.size}</span>
+                    </div>
+                    <span className="text-charcoal/20">|</span>
+                    <span className="font-lato text-xs">{room.view}</span>
+                  </div>
+
+                  <div className="space-y-2.5">
+                    <div className="flex items-center gap-2 text-charcoal/70">
+                      <BedDouble className="w-4 h-4 text-gold" />
+                      <span className="font-lato text-xs font-medium">{room.beds}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-charcoal/70">
+                      <Users className="w-4 h-4 text-gold" />
+                      <span className="font-lato text-xs font-medium">Sleeps {room.sleeps} Guests</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="p-6">
-                <h3 className="font-playfair text-2xl font-bold text-charcoal mb-3">
-                  {room.name}
-                </h3>
-
-                <div className="flex items-center gap-4 text-charcoal/70 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Maximize2 className="w-4 h-4 text-gold" />
-                    <span className="font-lato text-sm">{room.size}</span>
-                  </div>
-                  <span className="text-charcoal/30">|</span>
-                  <span className="font-lato text-sm">{room.view}</span>
-                </div>
-
-                <div className="border-t border-beige pt-4 space-y-3">
-                  <div className="flex items-center gap-2 text-charcoal/70">
-                    <BedDouble className="w-4 h-4 text-gold" />
-                    <span className="font-lato text-sm">{room.beds}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-charcoal/70">
-                    <Users className="w-4 h-4 text-gold" />
-                    <span className="font-lato text-sm">Sleeps {room.sleeps}</span>
-                  </div>
-                </div>
-
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {room.features.slice(0, 5).map((feature) => {
-                    const Icon = featureIcons[feature] || Wifi;
-                    return (
-                      <span
-                        key={feature}
-                        className="flex items-center gap-1 bg-beige px-2 py-1 rounded text-xs font-lato text-charcoal/80"
-                      >
-                        <Icon className="w-3 h-3 text-gold" />
-                        {feature}
-                      </span>
-                    );
-                  })}
-                  {room.features.length > 5 && (
-                    <span className="flex items-center bg-beige px-2 py-1 rounded text-xs font-lato text-charcoal/80">
-                      +{room.features.length - 5} more
-                    </span>
-                  )}
-                </div>
-
-                <a
-                  href="#contact"
-                  className="mt-6 w-full block bg-gold text-charcoal text-center py-3 rounded-lg font-lato font-semibold tracking-wide hover:bg-gold-light transition-colors duration-300"
+              <div className="px-6 pb-6 pt-2 flex gap-3">
+                <button
+                  onClick={() => openDetails(room)}
+                  className="flex-1 border border-maroon text-maroon hover:bg-maroon hover:text-white text-center py-2.5 rounded-lg font-lato font-semibold text-xs tracking-wider uppercase transition-colors"
                 >
-                  Book This Room
-                </a>
+                  Explore Tour
+                </button>
+                <button
+                  onClick={() => selectAndBook(room.name)}
+                  className="flex-1 bg-gold hover:bg-gold-light text-charcoal text-center py-2.5 rounded-lg font-lato font-bold text-xs tracking-wider uppercase transition-all shadow-sm hover:shadow-md"
+                >
+                  Reserve Suite
+                </button>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Heritage Light-Dismiss Dialog Modal */}
+      <dialog
+        ref={dialogRef}
+        closedby="any"
+        aria-labelledby="modalRoomName"
+        className="w-[92%] max-w-4xl rounded-2xl border-royal p-0 bg-cream shadow-2xl focus:outline-none overflow-hidden"
+      >
+        {selectedRoom && (
+          <div className="flex flex-col lg:flex-row h-full max-h-[85vh] lg:max-h-[90vh]">
+            
+            {/* Gallery Side */}
+            <div className="lg:w-1/2 relative bg-charcoal h-64 lg:h-auto">
+              <img
+                src={selectedRoom.images[modalImageIdx]}
+                alt={selectedRoom.name}
+                className="w-full h-full object-cover transition-all duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+              {/* Slider Arrows */}
+              <button
+                onClick={() => setModalImageIdx((prev) => (prev === 0 ? selectedRoom.images.length - 1 : prev - 1))}
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => setModalImageIdx((prev) => (prev === selectedRoom.images.length - 1 ? 0 : prev + 1))}
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 text-white w-8 h-8 rounded-full flex items-center justify-center transition-colors backdrop-blur-sm"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* Image Counter indicator */}
+              <div className="absolute bottom-4 left-4 text-xs font-lato text-white/80 bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">
+                Image {modalImageIdx + 1} of {selectedRoom.images.length}
+              </div>
+            </div>
+
+            {/* Description & Specs Side */}
+            <div className="lg:w-1/2 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
+              
+              {/* Close Button */}
+              <button
+                onClick={closeDetails}
+                className="absolute top-4 right-4 text-charcoal/50 hover:text-charcoal bg-beige/30 hover:bg-beige/60 p-2 rounded-full transition-colors z-10"
+                aria-label="Close details dialog"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="space-y-5">
+                <div>
+                  <span className="text-gold font-lato text-[11px] tracking-[0.2em] uppercase font-semibold">
+                    EXCLUSIVE ACCOMMODATION
+                  </span>
+                  <h3 id="modalRoomName" className="font-playfair text-3xl font-bold text-charcoal mt-1">
+                    {selectedRoom.name}
+                  </h3>
+                  <div className="font-lato text-sm text-maroon font-bold mt-1">
+                    Rates From {selectedRoom.price} / Night
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 bg-beige/25 p-3 rounded-lg border border-beige/40">
+                  <div className="text-xs font-lato text-charcoal/70">
+                    <span className="font-bold text-charcoal">Area:</span> {selectedRoom.size}
+                  </div>
+                  <div className="text-xs font-lato text-charcoal/70">
+                    <span className="font-bold text-charcoal">View:</span> {selectedRoom.view}
+                  </div>
+                  <div className="text-xs font-lato text-charcoal/70">
+                    <span className="font-bold text-charcoal">Bedding:</span> {selectedRoom.beds}
+                  </div>
+                  <div className="text-xs font-lato text-charcoal/70">
+                    <span className="font-bold text-charcoal">Capacity:</span> Up to {selectedRoom.sleeps} guests
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-playfair text-lg font-bold text-charcoal border-b border-beige pb-1">
+                    Room Overview
+                  </h4>
+                  <p className="font-lato text-xs sm:text-sm text-charcoal/80 leading-relaxed">
+                    {selectedRoom.longDesc}
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <h4 className="font-playfair text-lg font-bold text-charcoal border-b border-beige pb-1">
+                    Amenities & Comforts
+                  </h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {selectedRoom.features.map((feature) => {
+                      const Icon = featureIcons[feature] || Wifi;
+                      return (
+                        <div
+                          key={feature}
+                          className="flex items-center gap-2 text-xs font-lato text-charcoal/80"
+                        >
+                          <Icon className="w-3.5 h-3.5 text-gold flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-4 border-t border-beige flex gap-3">
+                <button
+                  onClick={closeDetails}
+                  className="flex-1 border border-charcoal/30 text-charcoal/70 hover:bg-beige/40 py-3 rounded-lg font-lato font-semibold text-xs tracking-wider uppercase transition-colors"
+                >
+                  Close Brochure
+                </button>
+                <button
+                  onClick={() => selectAndBook(selectedRoom.name)}
+                  className="flex-1 bg-gold text-charcoal hover:bg-gold-light py-3 rounded-lg font-lato font-bold text-xs tracking-wider uppercase transition-all shadow-md"
+                >
+                  Book This Suite
+                </button>
+              </div>
+
+            </div>
+          </div>
+        )}
+      </dialog>
+
     </section>
   );
 }

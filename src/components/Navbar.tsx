@@ -30,7 +30,7 @@ export function Navbar() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
-            ? 'bg-cream shadow-lg py-3'
+            ? 'bg-cream/90 backdrop-blur-md shadow-lg py-3 border-b border-gold/20'
             : 'bg-transparent py-5'
         }`}
         initial={{ y: -100 }}
@@ -41,16 +41,14 @@ export function Navbar() {
           <div className="flex items-center justify-between">
             <a href="#home" className="flex items-center space-x-2">
               <div className="text-center">
-                <h1 className={`font-playfair font-bold transition-colors duration-500 ${
+                <h1 className={`font-playfair font-bold transition-all duration-500 ${
                   isScrolled ? 'text-maroon text-xl' : 'text-white text-2xl'
                 }`}>
                   Raj Rajeshwari Haveli
                 </h1>
                 <div className="flex items-center justify-center space-x-2 mt-1">
                   <div className="h-px w-8 bg-gold" />
-                  <span className={`text-xs font-lato tracking-widest ${
-                    isScrolled ? 'text-gold' : 'text-gold'
-                  }`}>
+                  <span className="text-[10px] font-lato tracking-[0.25em] text-gold font-semibold">
                     JAIPUR
                   </span>
                   <div className="h-px w-8 bg-gold" />
@@ -63,18 +61,21 @@ export function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`font-lato text-sm tracking-wide transition-colors duration-300 ${
+                  className={`relative font-lato text-sm tracking-wide transition-colors duration-300 py-1 group ${
                     isScrolled
-                      ? 'text-charcoal hover:text-gold'
+                      ? 'text-charcoal hover:text-maroon'
                       : 'text-white/90 hover:text-gold'
                   }`}
                 >
                   {link.name}
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                    isScrolled ? 'bg-maroon' : 'bg-gold'
+                  }`} />
                 </a>
               ))}
               <a
                 href="#contact"
-                className="bg-gold text-charcoal px-6 py-2.5 rounded font-lato text-sm font-semibold tracking-wide hover:bg-gold-light transition-colors duration-300 shadow-md"
+                className="bg-gold text-charcoal px-6 py-2.5 rounded-lg font-lato text-sm font-semibold tracking-wide hover:bg-gold-light hover:shadow-lg transition-all duration-300 shadow-md hover:-translate-y-0.5"
               >
                 Book Now
               </a>
@@ -144,7 +145,7 @@ export function Navbar() {
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3 text-charcoal">
                       <Phone className="w-5 h-5 text-gold" />
-                      <span className="font-lato text-sm">+91 9829012345</span>
+                      <span className="font-lato text-sm">+91 9829077627</span>
                     </div>
                     <div className="flex items-center space-x-3 text-charcoal">
                       <MapPin className="w-5 h-5 text-gold" />

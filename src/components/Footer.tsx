@@ -111,11 +111,11 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+919829012345"
+                  href="tel:+919829077627"
                   className="flex items-center gap-3 text-white/70 hover:text-gold transition-colors"
                 >
                   <Phone className="w-4 h-4 text-gold" />
-                  <span className="font-lato text-sm">+91 9829012345</span>
+                  <span className="font-lato text-sm">+91 9829077627</span>
                 </a>
               </li>
               <li>
