@@ -49,15 +49,23 @@ export function Hero() {
 
   const handleQuickBook = (e: React.FormEvent) => {
     e.preventDefault();
-    // Dispatch a custom event to notify the Contact component
-    const event = new CustomEvent('quick-book', { detail: bookingData });
-    window.dispatchEvent(event);
+    
+    const formatDate = (dateStr: string) => {
+      if (!dateStr) return 'Not specified';
+      const parts = dateStr.split('-');
+      if (parts.length === 3) {
+        return `${parts[2]}/${parts[1]}/${parts[0]}`; // DD/MM/YYYY
+      }
+      return dateStr;
+    };
 
-    // Smooth scroll to the contact section
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    const checkInDate = formatDate(bookingData.checkIn);
+    const checkOutDate = formatDate(bookingData.checkOut);
+
+    const message = `Hello Raj Rajeshwari Haveli! 🌺\n\nI would like to check availability and rates for my upcoming stay:\n\n📅 *Check-In:* ${checkInDate}\n📅 *Check-Out:* ${checkOutDate}\n👥 *Guests:* ${bookingData.guests} guest(s)\n🏨 *Room Type:* ${bookingData.roomType}\n\nPlease let me know the rates and booking details. Thank you!`;
+
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=919829077627&text=${encodeURIComponent(message)}`;
+    window.location.href = whatsappUrl;
   };
 
   return (

@@ -21,6 +21,7 @@ import {
 import room1 from '../assets/images/gallery-1.jpg';
 import room2 from '../assets/images/gallery-2.jpg';
 import room3 from '../assets/images/gallery-3.jpg';
+import standardRoom from '../assets/images/standard-room.jpeg';
 
 const rooms = [
   {
@@ -51,8 +52,8 @@ const rooms = [
   },
   {
     name: 'Standard Double Room',
-    image: room3,
-    images: [room3, room2, room1],
+    image: standardRoom,
+    images: [standardRoom, room2, room1],
     size: '23 sq m',
     view: 'Quiet Haveli Garden View',
     beds: '1 Double Bed',

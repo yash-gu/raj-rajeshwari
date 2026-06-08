@@ -28,11 +28,10 @@ export function Navbar() {
   return (
     <>
       <motion.nav
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-cream/90 backdrop-blur-md shadow-lg py-3 border-b border-gold/20'
-            : 'bg-transparent py-5'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${isScrolled
+          ? 'bg-cream/90 backdrop-blur-md shadow-lg py-3 border-b border-gold/20'
+          : 'bg-transparent py-5'
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
@@ -42,16 +41,16 @@ export function Navbar() {
             <a href="#home" className="flex items-center space-x-2">
               <div className="text-center">
                 <h1 className={`font-playfair font-bold transition-all duration-500 ${
-                  isScrolled ? 'text-maroon text-xl' : 'text-white text-2xl'
+                  isScrolled ? 'text-maroon text-3xl md:text-4xl' : 'text-maroon-light text-4xl md:text-5xl'
                 }`}>
                   Raj Rajeshwari Haveli
                 </h1>
-                <div className="flex items-center justify-center space-x-2 mt-1">
-                  <div className="h-px w-8 bg-gold" />
-                  <span className="text-[10px] font-lato tracking-[0.25em] text-gold font-semibold">
+                <div className="flex items-center justify-center space-x-2 mt-1.5">
+                  <div className="h-px w-14 bg-gold" />
+                  <span className="text-[12px] font-lato tracking-[0.3em] text-gold font-semibold">
                     JAIPUR
                   </span>
-                  <div className="h-px w-8 bg-gold" />
+                  <div className="h-px w-14 bg-gold" />
                 </div>
               </div>
             </a>
@@ -61,16 +60,14 @@ export function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`relative font-lato text-sm tracking-wide transition-colors duration-300 py-1 group ${
-                    isScrolled
-                      ? 'text-charcoal hover:text-maroon'
-                      : 'text-white/90 hover:text-gold'
-                  }`}
+                  className={`relative font-lato text-sm tracking-wide transition-colors duration-300 py-1 group ${isScrolled
+                    ? 'text-charcoal hover:text-maroon'
+                    : 'text-white/90 hover:text-gold'
+                    }`}
                 >
                   {link.name}
-                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
-                    isScrolled ? 'bg-maroon' : 'bg-gold'
-                  }`} />
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${isScrolled ? 'bg-maroon' : 'bg-gold'
+                    }`} />
                 </a>
               ))}
               <a
@@ -83,9 +80,8 @@ export function Navbar() {
 
             <button
               onClick={() => setIsOpen(true)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
-                isScrolled ? 'text-charcoal' : 'text-white'
-              }`}
+              className={`lg:hidden p-2 rounded-lg transition-colors ${isScrolled ? 'text-charcoal' : 'text-white'
+                }`}
               aria-label="Open menu"
             >
               <Menu className="w-6 h-6" />
@@ -113,7 +109,7 @@ export function Navbar() {
             >
               <div className="p-6">
                 <div className="flex justify-between items-center mb-8">
-                  <h2 className="font-playfair font-bold text-maroon text-xl">
+                  <h2 className="font-playfair font-bold text-maroon text-3xl">
                     Raj Rajeshwari Haveli
                   </h2>
                   <button

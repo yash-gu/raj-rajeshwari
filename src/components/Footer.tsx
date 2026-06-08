@@ -37,15 +37,15 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="font-playfair text-2xl font-bold text-white mb-2">
+            <h3 className="font-playfair text-4xl md:text-5xl font-bold text-maroon-light mb-2">
               Raj Rajeshwari Haveli
             </h3>
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-px w-8 bg-gold" />
-              <span className="text-gold font-lato text-sm tracking-widest">
+              <div className="h-px w-14 bg-gold" />
+              <span className="text-gold font-lato text-sm tracking-[0.3em]">
                 JAIPUR
               </span>
-              <div className="h-px w-8 bg-gold" />
+              <div className="h-px w-14 bg-gold" />
             </div>
             <p className="font-playfair text-xl text-gold italic mb-4">
               "Where Royalty Lives On"

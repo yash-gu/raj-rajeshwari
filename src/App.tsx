@@ -8,6 +8,7 @@ import { Amenities } from './components/Amenities';
 import { Gallery } from './components/Gallery';
 import { Reviews } from './components/Reviews';
 import { Location } from './components/Location';
+import { HelpDesk } from './components/HelpDesk';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingElements } from './components/FloatingElements';
@@ -27,6 +28,7 @@ function App() {
         <Amenities />
         <Gallery />
         <Reviews />
+        <HelpDesk />
         <Location />
         <Contact />
       </main>
