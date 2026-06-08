@@ -3,29 +3,39 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { VolumeX, Music } from 'lucide-react';
 
 export function FloatingAudioPlayer() {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(true); // Default to true so visualizer animates
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const audio = new Audio('/sumer-nagar.m4a');
     audio.loop = true;
-    audio.volume = 0.45; // Pleasant background ambient volume
+    audio.volume = 0.5; // Good ambient volume level
+    audio.muted = true; // Start muted to bypass browser autoplay blocks
     audioRef.current = audio;
 
-    const playAttempt = () => {
+    const startMutedPlay = () => {
       if (!audioRef.current) return;
       audioRef.current.play()
         .then(() => {
           setIsPlaying(true);
-          cleanupListeners();
         })
-        .catch(() => {
-          // Autoplay blocked by browser policy, wait for interaction
+        .catch((err) => {
+          console.log('Muted autoplay blocked:', err);
         });
     };
 
     const handleInteraction = () => {
-      playAttempt();
+      if (audioRef.current) {
+        audioRef.current.muted = false; // Unmute on first interaction!
+        audioRef.current.play()
+          .then(() => {
+            setIsPlaying(true);
+            cleanupListeners();
+          })
+          .catch((err) => {
+            console.log('Interaction unlock failed:', err);
+          });
+      }
     };
 
     const cleanupListeners = () => {
@@ -35,14 +45,14 @@ export function FloatingAudioPlayer() {
       document.removeEventListener('keydown', handleInteraction);
     };
 
-    // Use capturing phase on document to intercept any click/touch anywhere on the screen
+    // Listen for any gesture to trigger unmuting
     document.addEventListener('click', handleInteraction, { capture: true });
     document.addEventListener('touchend', handleInteraction, { capture: true });
     document.addEventListener('scroll', handleInteraction, { passive: true });
     document.addEventListener('keydown', handleInteraction);
 
-    // Initial mount attempt
-    playAttempt();
+    // Play muted immediately on mount
+    startMutedPlay();
 
     return () => {
       cleanupListeners();
@@ -59,6 +69,7 @@ export function FloatingAudioPlayer() {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
+      audioRef.current.muted = false; // Ensure it is unmuted when user clicks play
       audioRef.current.play()
         .then(() => {
           setIsPlaying(true);
