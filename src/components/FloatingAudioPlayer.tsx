@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { VolumeX, Music } from 'lucide-react';
 
 export function FloatingAudioPlayer() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
