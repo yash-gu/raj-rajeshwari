@@ -30,14 +30,14 @@ export function FloatingAudioPlayer() {
 
     const cleanupListeners = () => {
       document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('touchend', handleInteraction);
       document.removeEventListener('scroll', handleInteraction);
       document.removeEventListener('keydown', handleInteraction);
     };
 
     // Use capturing phase on document to intercept any click/touch anywhere on the screen
     document.addEventListener('click', handleInteraction, { capture: true });
-    document.addEventListener('touchstart', handleInteraction, { capture: true });
+    document.addEventListener('touchend', handleInteraction, { capture: true });
     document.addEventListener('scroll', handleInteraction, { passive: true });
     document.addEventListener('keydown', handleInteraction);
 
