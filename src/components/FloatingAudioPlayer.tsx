@@ -4,14 +4,12 @@ import { VolumeX, Music } from 'lucide-react';
 
 export function FloatingAudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Initialize standard Audio API loading the m4a file from the public folder
     const audio = new Audio('/sumer-nagar.m4a');
     audio.loop = true;
-    audio.volume = 0.35; // Gentle ambient volume
+    audio.volume = 0.45; // Pleasant background ambient volume
     audioRef.current = audio;
 
     const playAttempt = () => {
@@ -19,30 +17,32 @@ export function FloatingAudioPlayer() {
       audioRef.current.play()
         .then(() => {
           setIsPlaying(true);
-          setHasInteracted(true);
           cleanupListeners();
         })
         .catch(() => {
-          // Autoplay blocked by browser policy
+          // Autoplay blocked by browser policy, wait for interaction
         });
     };
 
     const handleInteraction = () => {
-      if (!hasInteracted) {
-        playAttempt();
-      }
+      playAttempt();
     };
 
     const cleanupListeners = () => {
       window.removeEventListener('click', handleInteraction);
       window.removeEventListener('scroll', handleInteraction);
       window.removeEventListener('touchstart', handleInteraction);
+      window.removeEventListener('keydown', handleInteraction);
     };
 
-    // Setup event listeners for first-interaction play
+    // Listen for any gesture to bypass autoplay blocker
     window.addEventListener('click', handleInteraction);
-    window.addEventListener('scroll', handleInteraction);
+    window.addEventListener('scroll', handleInteraction, { passive: true });
     window.addEventListener('touchstart', handleInteraction);
+    window.addEventListener('keydown', handleInteraction);
+
+    // Initial mount attempt
+    playAttempt();
 
     return () => {
       cleanupListeners();
@@ -50,7 +50,7 @@ export function FloatingAudioPlayer() {
         audioRef.current.pause();
       }
     };
-  }, [hasInteracted]);
+  }, []);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -62,7 +62,6 @@ export function FloatingAudioPlayer() {
       audioRef.current.play()
         .then(() => {
           setIsPlaying(true);
-          setHasInteracted(true);
         })
         .catch((err) => {
           console.error('Audio playback failed:', err);
