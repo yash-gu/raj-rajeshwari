@@ -29,17 +29,17 @@ export function FloatingAudioPlayer() {
     };
 
     const cleanupListeners = () => {
-      window.removeEventListener('click', handleInteraction);
-      window.removeEventListener('scroll', handleInteraction);
-      window.removeEventListener('touchstart', handleInteraction);
-      window.removeEventListener('keydown', handleInteraction);
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('scroll', handleInteraction);
+      document.removeEventListener('keydown', handleInteraction);
     };
 
-    // Listen for any gesture to bypass autoplay blocker
-    window.addEventListener('click', handleInteraction);
-    window.addEventListener('scroll', handleInteraction, { passive: true });
-    window.addEventListener('touchstart', handleInteraction);
-    window.addEventListener('keydown', handleInteraction);
+    // Use capturing phase on document to intercept any click/touch anywhere on the screen
+    document.addEventListener('click', handleInteraction, { capture: true });
+    document.addEventListener('touchstart', handleInteraction, { capture: true });
+    document.addEventListener('scroll', handleInteraction, { passive: true });
+    document.addEventListener('keydown', handleInteraction);
 
     // Initial mount attempt
     playAttempt();
