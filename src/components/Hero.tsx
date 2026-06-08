@@ -25,6 +25,7 @@ const heroImages = [
 export function Hero() {
   const [currentImage, setCurrentImage] = useState(0);
   const [scrollY, setScrollY] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const [bookingData, setBookingData] = useState({
     checkIn: '',
@@ -32,6 +33,15 @@ export function Hero() {
     guests: '2',
     roomType: 'King Room',
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -83,7 +93,7 @@ export function Hero() {
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url(${heroImages[currentImage]})`,
-              y: scrollY * 0.35,
+              y: isMobile ? 0 : scrollY * 0.35,
             }}
             initial={{ scale: heroImages[currentImage] === hero5 ? 0.9 : (heroImages[currentImage] === hero0 ? 1.03 : 1.15) }}
             animate={{ scale: heroImages[currentImage] === hero5 ? 0.9 : (heroImages[currentImage] === hero0 ? 1.03 : 1.03) }}
@@ -92,7 +102,7 @@ export function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/75 md:to-black/85" />
 
       <div className="absolute inset-0 flex items-end justify-center pb-24 px-4">
         <div className="text-center w-full max-w-5xl">
