@@ -22,6 +22,7 @@ import room1 from '../assets/images/gallery-1.jpg';
 import room2 from '../assets/images/gallery-2.jpg';
 import room3 from '../assets/images/gallery-3.jpg';
 import standardRoom from '../assets/images/standard-room.jpeg';
+import queenRoom from '../assets/images/queen-room.jpeg';
 
 const rooms = [
   {
@@ -39,8 +40,8 @@ const rooms = [
   },
   {
     name: 'Queen Room',
-    image: room2,
-    images: [room2, room1, room3],
+    image: queenRoom,
+    images: [queenRoom, room1, room3],
     size: '30 sq m',
     view: 'Scenic Jaipur City View',
     beds: '1 Large Queen Bed',
