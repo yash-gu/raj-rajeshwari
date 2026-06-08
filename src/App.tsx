@@ -13,6 +13,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { FloatingElements } from './components/FloatingElements';
 import { ScrollProgress } from './components/ScrollProgress';
+import { FloatingAudioPlayer } from './components/FloatingAudioPlayer';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       </main>
       <Footer />
       <FloatingElements />
+      <FloatingAudioPlayer />
     </div>
   );
 }
