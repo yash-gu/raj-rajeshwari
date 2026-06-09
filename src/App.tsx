@@ -14,6 +14,7 @@ import { Footer } from './components/Footer';
 import { FloatingElements } from './components/FloatingElements';
 import { ScrollProgress } from './components/ScrollProgress';
 import { FloatingAudioPlayer } from './components/FloatingAudioPlayer';
+import { FaqSection } from './components/FaqSection';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Gallery />
         <Reviews />
         <HelpDesk />
+        <FaqSection />
         <Location />
         <Contact />
       </main>

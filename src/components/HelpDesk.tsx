@@ -27,8 +27,8 @@ export function HelpDesk() {
     {
       icon: Mail,
       title: 'Email Front Desk',
-      value: 'info@rajrajeshwarihaveli.com',
-      href: 'mailto:info@rajrajeshwarihaveli.com',
+      value: 'rajrajeshwarihaveli@gmail.com',
+      href: 'mailto:irajrajeshwarihaveli@gmail.com',
       actionText: 'Write to Us',
       color: 'hover:border-gold hover:text-gold-dark hover:shadow-gold/5',
     },
@@ -38,7 +38,7 @@ export function HelpDesk() {
     {
       icon: Compass,
       title: 'Royal Concierge & Tour Desk',
-      desc: 'Let us orchestrate your Jaipur adventure. Enjoy hand-picked heritage city guides, curated excursions to historical forts, and premium local chauffeur bookings.',
+      desc: 'Let us orchestrate your Jaipur adventure. Enjoy hand-picked heritage city guides, curated excursions to historical forts (Amer, Jaigarh, Nahargarh), local marketplace shopping tours, and premium local chauffeur bookings for your Jaipur hotel stay.',
     },
     {
       icon: Coffee,
@@ -81,14 +81,14 @@ export function HelpDesk() {
 
         {/* Content Grid */}
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Image and clock badge */}
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-royal bg-white p-2">
               <div className="relative rounded-xl overflow-hidden h-[350px] sm:h-[450px] lg:h-[500px]">
                 <img
                   src={helpDeskImage}
-                  alt="24/7 Royal Help Desk Service at Raj Rajeshwari Haveli"
+                  alt="24/7 Royal Support Desk and Concierge Services at Raj Rajeshwari Haveli hotel in Jaipur"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-maroon/40 via-transparent to-transparent pointer-events-none" />
@@ -114,7 +114,7 @@ export function HelpDesk() {
 
           {/* Right Column: Information & Actions */}
           <div className="lg:col-span-6 flex flex-col justify-center">
-            
+
             {/* Services List */}
             <div className="space-y-8 mb-10">
               {services.map((service, index) => (
@@ -157,7 +157,7 @@ export function HelpDesk() {
               <h4 className="font-playfair text-xl font-bold text-charcoal mb-4">
                 Reach the Concierge Directly
               </h4>
-              
+
               <div className="grid sm:grid-cols-3 gap-4">
                 {contactOptions.map((option, index) => (
                   <motion.a

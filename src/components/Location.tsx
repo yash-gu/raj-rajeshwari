@@ -46,7 +46,7 @@ export function Location() {
           </h2>
           <div className="arch-divider mx-auto max-w-[200px] mb-6" />
           <p className="font-lato text-base sm:text-lg text-charcoal/70 max-w-2xl mx-auto">
-            Situated in quiet Khatipura, our haveli keeps you away from traffic while maintaining close access to tourist hotspots.
+            Situated in the peaceful locality of Khatipura, our heritage haveli hotel keeps you away from busy traffic while maintaining close access to Jaipur Junction railway station, the airport, and key tourist hotspots.
           </p>
         </div>
 

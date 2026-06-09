@@ -40,11 +40,11 @@ export function Navbar() {
           <div className="flex items-center justify-between">
             <a href="#home" className="flex items-center space-x-2">
               <div className="text-center">
-                <h1 className={`font-playfair font-bold transition-all duration-500 ${
+                <div className={`font-playfair font-bold transition-all duration-500 ${
                   isScrolled ? 'text-maroon text-3xl md:text-4xl' : 'text-maroon-light text-4xl md:text-5xl'
                 }`}>
                   Raj Rajeshwari Haveli
-                </h1>
+                </div>
                 <div className="flex items-center justify-center space-x-2 mt-1.5">
                   <div className="h-px w-14 bg-gold" />
                   <span className="text-[12px] font-lato tracking-[0.3em] text-gold font-semibold">

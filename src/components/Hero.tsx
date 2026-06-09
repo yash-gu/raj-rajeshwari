@@ -105,8 +105,24 @@ export function Hero() {
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/75 md:to-black/85" />
 
-        <div className="absolute inset-0 flex items-end justify-center pb-24 px-4">
+        <div className="absolute inset-0 flex items-end justify-center pb-20 md:pb-24 px-4">
           <div className="text-center w-full max-w-5xl">
+            {/* Premium SEO Headings */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mb-6 md:mb-8"
+            >
+              <h1 className="font-playfair text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-3 tracking-wide leading-tight drop-shadow-lg">
+                Raj Rajeshwari Haveli
+              </h1>
+              <h2 className="font-lato text-gold text-xs sm:text-sm md:text-base tracking-[0.3em] font-bold uppercase drop-shadow-md">
+                Luxury Heritage Hotel & Traditional Haveli in Jaipur
+              </h2>
+              <div className="h-0.5 w-24 bg-gold/40 mx-auto mt-4 hidden sm:block" />
+            </motion.div>
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

@@ -10,8 +10,9 @@ const storyTabs = [
     id: 'legacy',
     label: 'Our Rajput Legacy',
     title: 'A Chouhan Rajput Lineage',
-    content: 'Owned by Thakur Dilip Singh of the illustrious Chouhan Rajput family, Raj Rajeshwari Haveli is a living repository of regional history. Opened to the world in 2019, the family invites travelers into their private sanctuary to experience Jaipur not as a tourist, but as a guest of honor in a traditional royal home.',
+    content: 'Owned by Thakur Dilip Singh of the illustrious Chouhan Rajput family, Raj Rajeshwari Haveli is a living repository of regional history. Opened to the world in 2019, the family invites travelers into their private sanctuary to experience Jaipur not as a tourist, but as a guest of honor in a traditional royal home. Discover the true essence of Jaipur hotel heritage and Rajput grandeur.',
     image: aboutImage,
+    alt: 'Thakur Dilip Singh Chouhan Rajput legacy and heritage hotel stay in Jaipur - Raj Rajeshwari Haveli',
     badgeText: 'Est. 2019',
     badgeDesc: 'Opened to Guests',
   },
@@ -19,8 +20,9 @@ const storyTabs = [
     id: 'architecture',
     label: 'Heritage Architecture',
     title: 'Crafted in Stained Glass & Stone',
-    content: 'Step into a visual masterclass of traditional Rajput design. The property is adorned with glistening marble pathways, intricate hand-carved archways, colorful stained glass windows that paint the walls with light, and high ceilings that keep the suites cool in the Rajasthani sun.',
+    content: 'Step into a visual masterclass of traditional Rajput design. The property is adorned with glistening marble pathways, intricate hand-carved archways, colorful stained glass windows that paint the walls with light, and high ceilings that keep the suites cool in the Rajasthani sun. It stands as one of the finest architectural havelis in Jaipur.',
     image: gallery3,
+    alt: 'Traditional Rajasthani architecture, marble archways, and stained glass windows at Raj Rajeshwari Haveli hotel Jaipur',
     badgeText: 'Classic',
     badgeDesc: 'Rajput Craftsmanship',
   },
@@ -28,8 +30,9 @@ const storyTabs = [
     id: 'hospitality',
     label: 'Royal Hospitality',
     title: 'Atithi Devo Bhava',
-    content: 'Experience hospitality in its purest form. From the traditional marigold garland and red vermillion tikka welcome, to the personalized storytelling sessions in the evening, our guests are treated with the care historically reserved for kings. We stand proudly at a 5.0/5 rating on TripAdvisor.',
+    content: 'Experience hospitality in its purest form. From the traditional marigold garland and red vermillion tikka welcome, to the personalized storytelling sessions in the evening, our guests are treated with the care historically reserved for kings. We stand proudly at a 5.0/5 rating on TripAdvisor as a top-ranked heritage stay in Jaipur.',
     image: gallery4,
+    alt: 'Marigold garland and traditional royal welcome at Raj Rajeshwari Haveli, top TripAdvisor rated Jaipur heritage stay',
     badgeText: '5.0 / 5',
     badgeDesc: 'TripAdvisor Rating',
   },
@@ -108,7 +111,7 @@ export function About() {
                   <motion.img
                     key={currentTab.id}
                     src={currentTab.image}
-                    alt={currentTab.title}
+                    alt={currentTab.alt}
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}

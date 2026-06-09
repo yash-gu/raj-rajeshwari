@@ -59,7 +59,7 @@ export function Dining() {
                 <div className="w-20 h-0.5 bg-gold/50" />
                 
                 <p className="font-lato text-sm sm:text-base text-white/80 leading-relaxed first-letter:text-4xl first-letter:font-playfair first-letter:text-gold first-letter:mr-2 first-letter:float-left first-letter:font-bold">
-                  At Raj Rajeshwari Haveli, dining is not merely a meal; it is a journey through Jaipur’s storied culinary heritage. Every dish is a testament to the kitchens of Rajasthan’s royalty, prepared using age-old family recipes handed down through generations. Our chefs slow-cook every preparation in hand-beaten copper vessels over wood charcoal, blending freshly ground secret spices with hand-churned ghee to recreate the authentic richness of the desert kingdom.
+                  At Raj Rajeshwari Haveli, dining is not merely a meal; it is a journey through Jaipur’s storied culinary heritage. Every dish is a testament to the kitchens of Rajasthan’s royalty, prepared using age-old family recipes handed down through generations. Known for providing some of the best traditional Rajasthani food in Jaipur, our chefs slow-cook every preparation in hand-beaten copper vessels over wood charcoal, blending freshly ground secret spices with hand-churned ghee to recreate the authentic richness of the desert kingdom.
                 </p>
 
                 <div className="bg-gold/5 border-l-2 border-gold/40 p-4 rounded-r-lg italic my-6">
@@ -100,7 +100,7 @@ export function Dining() {
               <div className="relative rounded-xl overflow-hidden h-[300px] sm:h-[400px] lg:h-[520px]">
                 <img
                   src={diningImage}
-                  alt="Fine dining at Raj Rajeshwari Haveli courtyard"
+                  alt="Fine dining at Raj Rajeshwari Haveli courtyard restaurant in Jaipur - authentic traditional Rajasthani food"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-6 sm:p-8" >

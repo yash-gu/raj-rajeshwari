@@ -22,16 +22,16 @@ const categories = [
 ];
 
 const galleryImages = [
-  { url: gallery1, alt: 'Entry courtyard of the Haveli', category: 'courtyard' },
-  { url: gallery2, alt: 'Heritage suite premium double chamber', category: 'suites' },
-  { url: gallery3, alt: 'Royal interior lounge details', category: 'architecture' },
-  { url: gallery4, alt: 'Courtyard dining banquet hall', category: 'dining' },
-  { url: gallery5, alt: 'Intricate bedroom drapery and bolster details', category: 'suites' },
-  { url: gallery6, alt: 'Royal lounge seating lounge area', category: 'suites' },
-  { url: gallery7, alt: 'Stained glass dome architectural detail', category: 'architecture' },
-  { url: gallery8, alt: 'Royal lounge seating and heritage corridors', category: 'suites' },
-  { url: gallery9, alt: 'Stained glass window architectural patterns', category: 'architecture' },
-  { url: gallery10, alt: 'Haveli balcony overlooking the courtyard arches', category: 'courtyard' },
+  { url: gallery1, alt: 'Grand entry courtyard of Raj Rajeshwari Haveli heritage hotel in Jaipur', category: 'courtyard' },
+  { url: gallery2, alt: 'Luxury heritage suite double room chamber stay at Raj Rajeshwari Haveli Jaipur', category: 'suites' },
+  { url: gallery3, alt: 'Intricate Rajput stone carvings and royal interior design at Raj Rajeshwari Haveli', category: 'architecture' },
+  { url: gallery4, alt: 'Courtyard dining and traditional Rajasthani restaurant setup at Raj Rajeshwari Haveli', category: 'dining' },
+  { url: gallery5, alt: 'Royal chamber bedroom luxury drapery and heritage bolsters in Jaipur hotel suite', category: 'suites' },
+  { url: gallery6, alt: 'Traditional royal seating area inside luxury heritage haveli hotel, Jaipur', category: 'suites' },
+  { url: gallery7, alt: 'Historic stained glass dome and traditional Rajput architecture details at Raj Rajeshwari Haveli', category: 'architecture' },
+  { url: gallery8, alt: 'Heritage corridors and antique wood seating area at Raj Rajeshwari Haveli hotel', category: 'suites' },
+  { url: gallery9, alt: 'Stained glass window patterns casting colorful light in rooms at Raj Rajeshwari Haveli', category: 'architecture' },
+  { url: gallery10, alt: 'Traditional haveli balcony overlooking the historic courtyard archways in Jaipur', category: 'courtyard' },
 ];
 
 export function Gallery() {

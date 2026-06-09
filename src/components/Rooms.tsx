@@ -34,8 +34,8 @@ const rooms = [
     beds: '1 Royal King Bed',
     sleeps: 2,
     price: 'INR 4,500',
-    shortDesc: 'A majestic sanctuary blending heritage Rajput layout elements with modern premium comfort.',
-    longDesc: 'The King Room is the crown jewel of our accommodations. It features tall arched ceilings, stained glass accents, and classic Rajasthani murals, combined with a separate seating lounge and study desk. Experience premium ventilation and grand windows overlooking the central haveli courtyard.',
+    shortDesc: 'A majestic heritage hotel room blending traditional Rajput architecture with modern premium luxury in Jaipur.',
+    longDesc: 'The King Room is the crown jewel of our accommodations. It features tall arched ceilings, stained glass accents, and classic Rajasthani murals, combined with a separate seating lounge and study desk. Experience premium ventilation, authentic boutique hotel vibes, and grand windows overlooking the central haveli courtyard.',
     features: ['AC', 'LED TV', 'Balcony', 'Bathrobe', 'Free WiFi', 'PC Workspace', 'Coffee Maker', 'Premium Toiletries', 'Heritage Furnishings'],
   },
   {
@@ -47,8 +47,8 @@ const rooms = [
     beds: '1 Large Queen Bed',
     sleeps: 2,
     price: 'INR 3,500',
-    shortDesc: 'A beautiful room featuring hand-selected antique furnishings and a peaceful atmosphere.',
-    longDesc: 'Designed for comfort and character, the Queen Room is decorated with local block prints and detailed wood carvings. Enjoy standard modern amenities along with an exquisite seating nook perfect for reading, overlooking the historic streets of Jaipur.',
+    shortDesc: 'A beautiful haveli hotel room featuring hand-selected Rajasthani antique furnishings and a peaceful Jaipur stay experience.',
+    longDesc: 'Designed for comfort and character, the Queen Room is decorated with local block prints and detailed wood carvings. Enjoy standard modern amenities along with an exquisite seating nook perfect for reading, overlooking the historic streets of Jaipur. A perfect choices for travelers wanting to stay in a traditional haveli.',
     features: ['AC', 'LED TV', 'Balcony', 'Bathrobe', 'Free WiFi', 'Dressing Area', 'Standard Toiletries', 'Traditional Bolsters'],
   },
   {
@@ -60,8 +60,8 @@ const rooms = [
     beds: '1 Double Bed',
     sleeps: 2,
     price: 'INR 2,500',
-    shortDesc: 'A cozy retreat offering absolute peace, ideal for solo travelers or couples.',
-    longDesc: 'Our Standard Double Room combines essential comforts with elegant traditional touches. Impeccably clean and quiet, it features custom local drapery, garden perspectives, and simple handcrafted wood details that guarantee a restful heritage stay.',
+    shortDesc: 'A cozy heritage hotel double room offering absolute peace, ideal for travelers looking for authentic budget stays in Jaipur.',
+    longDesc: 'Our Standard Double Room combines essential comforts with elegant traditional touches. Impeccably clean and quiet, it features custom local drapery, garden perspectives, and simple handcrafted wood details that guarantee a restful heritage haveli stay at a very budget-friendly price.',
     features: ['AC', 'LED TV', 'Private Bathroom', 'Free WiFi', 'Daily Housekeeping', 'Hot Water Kettle', 'Handmade Soaps'],
   },
 ];
@@ -201,7 +201,7 @@ export function Rooms() {
                 <div className="relative overflow-hidden h-60">
                   <img
                     src={room.image}
-                    alt={room.name}
+                    alt={`${room.name} - Heritage Luxury Stay at Raj Rajeshwari Haveli Jaipur`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute top-4 right-4 bg-maroon text-gold border border-gold/40 px-3.5 py-1.5 rounded-full text-xs font-lato font-bold tracking-wide shadow-md">
@@ -280,7 +280,7 @@ export function Rooms() {
             <div className="lg:w-1/2 relative bg-charcoal h-64 lg:h-auto">
               <img
                 src={selectedRoom.images[modalImageIdx]}
-                alt={selectedRoom.name}
+                alt={`${selectedRoom.name} interior detail - Raj Rajeshwari Haveli heritage hotel Jaipur room image ${modalImageIdx + 1}`}
                 className="w-full h-full object-cover transition-all duration-300"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />

@@ -181,6 +181,36 @@ export function Footer() {
           </motion.div>
         </div>
 
+        {/* SEO Travel Directory Tags */}
+        <div className="border-t border-white/10 pt-8 pb-4 text-left">
+          <p className="text-[11px] font-lato text-white/35 uppercase tracking-widest font-semibold mb-3">Popular Jaipur Search Directories</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-[11px] font-lato text-white/45 leading-relaxed">
+            <span>Jaipur Hotels</span>
+            <span className="text-white/15">•</span>
+            <span>Heritage Haveli in Jaipur</span>
+            <span className="text-white/15">•</span>
+            <span>Boutique Hotel Jaipur</span>
+            <span className="text-white/15">•</span>
+            <span>Stay in Heritage Haveli Jaipur</span>
+            <span className="text-white/15">•</span>
+            <span>Khatipura Jaipur Hotel</span>
+            <span className="text-white/15">•</span>
+            <span>Hotel near Jaipur Railway Station</span>
+            <span className="text-white/15">•</span>
+            <span>Traditional Rajasthani Stay</span>
+            <span className="text-white/15">•</span>
+            <span>Luxury Haveli Resort Rajasthan</span>
+            <span className="text-white/15">•</span>
+            <span>Best Heritage Hotels in India</span>
+            <span className="text-white/15">•</span>
+            <span>Hotel near Hawa Mahal Jaipur</span>
+            <span className="text-white/15">•</span>
+            <span>Family Hotel Stay Jaipur</span>
+            <span className="text-white/15">•</span>
+            <span>Budget Heritage Hotel Jaipur</span>
+          </div>
+        </div>
+
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="font-lato text-sm text-white/50">
