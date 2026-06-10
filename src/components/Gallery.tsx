@@ -11,7 +11,7 @@ import gallery7 from '../assets/images/hero-3.jpeg';
 import gallery8 from '../assets/images/hero-4.jpeg';
 import gallery9 from '../assets/images/hero-5.jpeg';
 import gallery10 from '../assets/images/hero-6.jpeg';
-
+import gallery11 from '../assets/images/gallery.jpeg';
 
 const categories = [
   { id: 'all', label: 'All Photos' },
@@ -32,6 +32,7 @@ const galleryImages = [
   { url: gallery8, alt: 'Heritage corridors and antique wood seating area at Raj Rajeshwari Haveli hotel', category: 'suites' },
   { url: gallery9, alt: 'Stained glass window patterns casting colorful light in rooms at Raj Rajeshwari Haveli', category: 'architecture' },
   { url: gallery10, alt: 'Traditional haveli balcony overlooking the historic courtyard archways in Jaipur', category: 'courtyard' },
+  { url: gallery11, alt: 'Ornate Mewari arched corridor and checkerboard marble gallery path at Raj Rajeshwari Haveli', category: 'architecture' },
 ];
 
 export function Gallery() {

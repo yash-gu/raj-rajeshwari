@@ -23,12 +23,13 @@ import room2 from '../assets/images/gallery-2.jpg';
 import room3 from '../assets/images/gallery-3.jpg';
 import standardRoom from '../assets/images/standard-room.jpeg';
 import queenRoom from '../assets/images/queen-room.jpeg';
+import kingRoom from '../assets/images/king-room.avif';
 
 const rooms = [
   {
     name: 'King Room',
-    image: room1,
-    images: [room1, room2, room3],
+    image: kingRoom,
+    images: [kingRoom, room2, room3],
     size: '40 sq m',
     view: 'Heritage Courtyard View',
     beds: '1 Royal King Bed',
