@@ -6,7 +6,7 @@ const stats = [
   { icon: Star, value: 5, suffix: '/5', label: 'TripAdvisor Rating', displayValue: '5.0' },
   { icon: Star, value: 23, suffix: '', label: 'Guest Reviews', displayValue: '23' },
   { icon: Calendar, value: 2019, suffix: '', label: 'Established', displayValue: '2019' },
-  { icon: Building2, value: 9, suffix: '+', label: 'Heritage Rooms', displayValue: '9+' },
+  { icon: Building2, value: 18, suffix: '+', label: 'Heritage Rooms', displayValue: '18+' },
 ];
 
 function AnimatedCounter({ value, suffix, displayValue }: { value: number; suffix: string; displayValue: string }) {
