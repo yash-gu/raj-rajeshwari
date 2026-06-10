@@ -14,7 +14,7 @@ import gallery10 from '../assets/images/hero-6.jpeg';
 import gallery11 from '../assets/images/gallery.jpeg';
 import kingRoom from '../assets/images/king-room.avif';
 import queenRoom from '../assets/images/queen-room.jpeg';
-import standardRoom from '../assets/images/standard-room.jpeg';
+import standardRoom from '../assets/images/standard-double-room.avif';
 
 const categories = [
   { id: 'all', label: 'All Photos' },
