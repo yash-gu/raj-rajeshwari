@@ -12,6 +12,9 @@ import gallery8 from '../assets/images/hero-4.jpeg';
 import gallery9 from '../assets/images/hero-5.jpeg';
 import gallery10 from '../assets/images/hero-6.jpeg';
 import gallery11 from '../assets/images/gallery.jpeg';
+import kingRoom from '../assets/images/king-room.avif';
+import queenRoom from '../assets/images/queen-room.jpeg';
+import standardRoom from '../assets/images/standard-room.jpeg';
 
 const categories = [
   { id: 'all', label: 'All Photos' },
@@ -33,6 +36,9 @@ const galleryImages = [
   { url: gallery9, alt: 'Stained glass window patterns casting colorful light in rooms at Raj Rajeshwari Haveli', category: 'architecture' },
   { url: gallery10, alt: 'Traditional haveli balcony overlooking the historic courtyard archways in Jaipur', category: 'courtyard' },
   { url: gallery11, alt: 'Ornate Mewari arched corridor and checkerboard marble gallery path at Raj Rajeshwari Haveli', category: 'architecture' },
+  { url: kingRoom, alt: 'The Royal King Room suite featuring arched ceilings and hand-crafted Rajput furnishings', category: 'suites' },
+  { url: queenRoom, alt: 'The Heritage Queen Room suite with traditional block prints and detailed wood carvings', category: 'suites' },
+  { url: standardRoom, alt: 'The Standard Double Room chamber offering quiet garden views and traditional accents', category: 'suites' },
 ];
 
 export function Gallery() {
