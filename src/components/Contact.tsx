@@ -40,7 +40,7 @@ export function Contact() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Listen for the custom quick-book event
+  // Listen for the custom quick-book event and select-thali event
   useEffect(() => {
     const handleQuickBookEvent = (event: Event) => {
       const customEvent = event as CustomEvent;
@@ -55,9 +55,18 @@ export function Contact() {
       }
     };
 
+    const handleSelectThaliEvent = () => {
+      setFormData((prev) => ({
+        ...prev,
+        addTraditionalThali: true,
+      }));
+    };
+
     window.addEventListener('quick-book', handleQuickBookEvent);
+    window.addEventListener('select-thali', handleSelectThaliEvent);
     return () => {
       window.removeEventListener('quick-book', handleQuickBookEvent);
+      window.removeEventListener('select-thali', handleSelectThaliEvent);
     };
   }, []);
 
