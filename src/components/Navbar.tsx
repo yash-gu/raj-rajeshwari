@@ -41,7 +41,7 @@ export function Navbar() {
             <a href="#home" className="flex items-center space-x-2">
               <div className="text-center">
                 <div className={`font-playfair font-bold transition-all duration-500 ${
-                  isScrolled ? 'text-maroon text-3xl md:text-4xl' : 'text-maroon-light text-4xl md:text-5xl'
+                  isScrolled ? 'text-maroon text-3xl md:text-4xl' : 'text-white text-4xl md:text-5xl'
                 }`}>
                   Raj Rajeshwari Haveli
                 </div>

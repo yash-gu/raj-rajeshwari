@@ -269,7 +269,7 @@ export function Rooms() {
       {/* Heritage Light-Dismiss Dialog Modal */}
       <dialog
         ref={dialogRef}
-        closedby="any"
+        {...{ closedby: 'any' }}
         aria-labelledby="modalRoomName"
         className="w-[92%] max-w-4xl rounded-2xl border-royal p-0 bg-cream shadow-2xl focus:outline-none overflow-hidden"
       >

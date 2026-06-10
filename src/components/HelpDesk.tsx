@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Sparkles, Phone, MessageSquare, Mail, Clock, Compass, Coffee, ShieldCheck, MapPin } from 'lucide-react';
+import { Sparkles, Phone, MessageSquare, Mail, Clock, Compass, Coffee, ShieldCheck } from 'lucide-react';
 import helpDeskImage from '../assets/images/help-desk.jpeg';
 
 export function HelpDesk() {

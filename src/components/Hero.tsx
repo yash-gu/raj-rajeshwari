@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Sparkles, CalendarDays, Users, Bed } from 'lucide-react';
+import { ChevronDown, CalendarDays, Users, Bed } from 'lucide-react';
 import hero0 from '../assets/images/hero-0.png';
 import hero1 from '../assets/images/hero-1.jpeg';
 import hero2 from '../assets/images/hero-2.jpg';
@@ -59,7 +59,7 @@ export function Hero() {
 
   const handleQuickBook = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const formatDate = (dateStr: string) => {
       if (!dateStr) return 'Not specified';
       const parts = dateStr.split('-');
@@ -114,13 +114,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mb-6 md:mb-8"
             >
-              <h1 className="font-playfair text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-3 tracking-wide leading-tight drop-shadow-lg">
-                Raj Rajeshwari Haveli
-              </h1>
-              <h2 className="font-lato text-gold text-xs sm:text-sm md:text-base tracking-[0.3em] font-bold uppercase drop-shadow-md">
-                Luxury Heritage Hotel & Traditional Haveli in Jaipur
-              </h2>
-              <div className="h-0.5 w-24 bg-gold/40 mx-auto mt-4 hidden sm:block" />
+
             </motion.div>
 
             <motion.div
