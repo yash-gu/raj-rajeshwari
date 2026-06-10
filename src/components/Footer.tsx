@@ -37,7 +37,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="font-playfair text-4xl md:text-5xl font-bold text-maroon-light mb-2">
+            <h3 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-2">
               Raj Rajeshwari Haveli
             </h3>
             <div className="flex items-center gap-2 mb-4">
