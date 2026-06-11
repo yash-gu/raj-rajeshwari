@@ -9,9 +9,9 @@ import hero4 from '../assets/images/hero-4.jpeg';
 import hero6 from '../assets/images/gallery.jpeg';
 import hero5 from '../assets/images/hero-5.jpeg';
 import hero7 from '../assets/images/hero-6.jpeg';
-import hero8 from '../assets/images/hero-7.jpg';
+import hero10 from '../assets/images/hero-7.jpg';
 import hero9 from '../assets/images/hero-8.jpg';
-import hero10 from '../assets/images/hero-9.jpg';
+import hero8 from '../assets/images/hero-9.jpg';
 
 
 const heroImages = [
