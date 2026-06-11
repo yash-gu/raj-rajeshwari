@@ -13,7 +13,6 @@ import hero9 from '../assets/images/hero-8.jpg';
 import hero8 from '../assets/images/hero-9.jpg';
 import hero10 from '../assets/images/hero-7.jpg';
 
-
 const heroImages = [
   hero0,
   hero1,
@@ -26,7 +25,6 @@ const heroImages = [
   hero8,
   hero9,
   hero10,
-
 ];
 
 export function Hero() {
@@ -102,6 +100,8 @@ export function Hero() {
               style={{
                 backgroundImage: `url(${heroImages[currentImage]})`,
                 y: isMobile ? 0 : scrollY * 0.35,
+                // --- ADDED BRIGHTNESS FILTER HERE ---
+                filter: 'brightness(1.25)',
               }}
               initial={{ scale: heroImages[currentImage] === hero5 ? 0.9 : (heroImages[currentImage] === hero0 ? 1.03 : 1.15) }}
               animate={{ scale: heroImages[currentImage] === hero5 ? 0.9 : (heroImages[currentImage] === hero0 ? 1.03 : 1.03) }}
@@ -110,19 +110,18 @@ export function Hero() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/45 to-black/75 md:to-black/85" />
+        {/* Note: This overlay darkens the image to keep text readable. 
+            If it's still too dark, you can tweak these Tailwind classes (e.g., from 'from-black/40' to 'from-black/20') */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/35 to-black/65 md:to-black/75" />
 
         <div className="absolute inset-0 flex items-end justify-center pb-20 md:pb-24 px-4">
           <div className="text-center w-full max-w-5xl">
-            {/* Premium SEO Headings */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               className="mb-6 md:mb-8"
-            >
-
-            </motion.div>
+            />
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -240,7 +239,7 @@ export function Hero() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream to-transparent pointer-events-none" />
       </section>
 
-      {/* Mobile Quick Booking Section (Rendered on next screen fold) */}
+      {/* Mobile Quick Booking Section */}
       <div
         id="quick-booking"
         className="md:hidden bg-cream py-16 px-4 border-b border-gold/15 relative z-10 scroll-mt-20"
