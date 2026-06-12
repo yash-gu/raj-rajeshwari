@@ -60,7 +60,7 @@ const rooms = [
     view: 'Quiet Haveli Garden View',
     beds: '1 Double Bed',
     sleeps: 2,
-    price: 'INR 2,500',
+    price: 'INR 3,000', // Changed standard double room to 3000
     shortDesc: 'A cozy heritage hotel double room offering absolute peace, ideal for travelers looking for authentic budget stays in Jaipur.',
     longDesc: 'Our Standard Double Room combines essential comforts with elegant traditional touches. Impeccably clean and quiet, it features custom local drapery, garden perspectives, and simple handcrafted wood details that guarantee a restful heritage haveli stay at a very budget-friendly price.',
     features: ['AC', 'LED TV', 'Private Bathroom', 'Free WiFi', 'Daily Housekeeping', 'Hot Water Kettle', 'Handmade Soaps'],
@@ -134,7 +134,6 @@ export function Rooms() {
       }
     };
 
-    // Close on dialog escape or cancel events natively
     const handleCloseEvent = () => {
       setSelectedRoom(null);
     };
@@ -149,7 +148,6 @@ export function Rooms() {
   }, [selectedRoom]);
 
   const selectAndBook = (roomName: string) => {
-    // Notify the quick book bar state
     const event = new CustomEvent('quick-book', {
       detail: {
         roomType: roomName,
@@ -161,7 +159,6 @@ export function Rooms() {
     window.dispatchEvent(event);
     closeDetails();
     
-    // Smooth scroll to the contact form
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
