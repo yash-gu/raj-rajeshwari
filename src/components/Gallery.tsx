@@ -12,9 +12,9 @@ import gallery8 from '../assets/images/hero-4.jpeg';
 import gallery9 from '../assets/images/hero-5.jpeg';
 import gallery10 from '../assets/images/hero-6.jpeg';
 import gallery11 from '../assets/images/gallery.jpeg';
-import kingRoom from '../assets/images/king-room.avif';
+import kingRoom from '../assets/images/king-room.jpg';
 import queenRoom from '../assets/images/queen-room.jpeg';
-import standardRoom from '../assets/images/standard-double-room.avif';
+import standardRoom from '../assets/images/standard-double-room.jpg';
 
 const categories = [
   { id: 'all', label: 'All Photos' },
