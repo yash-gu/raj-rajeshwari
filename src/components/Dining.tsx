@@ -121,7 +121,7 @@ export function Dining() {
                     Authentic Mewari & Rajasthani
                   </h5>
                   <p className="font-lato text-xs sm:text-sm text-white/80 leading-relaxed">
-                    Every single dish is crafted with love and absolute precision under the expert supervision of our Royal Chef Dilip Singh. Under his guidance, the legacy of the royal kitchens lives on in every bite.
+                    Every single dish is crafted with love and absolute precision under the expert supervision of our Royal Chef. Under his guidance, the legacy of the royal kitchens lives on in every bite.
                   </p>
                 </div>
               </div>
