@@ -1,0 +1,206 @@
+╔════════════════════════════════════════════════════════════════╗
+║     RAJ RAJESHWARI HAVELI - COMPONENT FLOW MAP                ║
+║     Heritage Hotel Website - Enhanced Version                  ║
+╚════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────┐
+│ 🎯 FIXED ELEMENTS (Always Visible)                            │
+├────────────────────────────────────────────────────────────────┤
+│ • ScrollProgress (Top progress bar)                            │
+│ • Navbar (Sticky navigation)                                   │
+│ • FloatingElements (WhatsApp + QR buttons)                     │
+│ • FloatingAudioPlayer (Background music)                       │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ 📱 MAIN CONTENT FLOW                                           │
+└────────────────────────────────────────────────────────────────┘
+
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 1. HERO SECTION ✨ ENHANCED                             ┃
+    ┃    • Full-screen image slider (11 images)               ┃
+    ┃    • NEW: "Experience Royal Heritage" headline          ┃
+    ┃    • NEW: Compelling tagline                            ┃
+    ┃    • Desktop booking bar (glassmorphism)                ┃
+    ┃    • Mobile booking section                             ┃
+    ┃    • Scroll indicator                                   ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 2. TRUST BAR ✨ ENHANCED                                ┃
+    ┃    • NEW: 6 animated trust indicators (was 4)           ┃
+    ┃    • NEW: Shimmer animation background                  ┃
+    ┃    • NEW: Bottom trust badges row                       ┃
+    ┃    • Hover animations on stats                          ┃
+    ┃    • Counter animations on scroll                       ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 3. ABOUT SECTION                                         ┃
+    ┃    • 3-tab storytelling (Legacy/Architecture/Hospitality)┃
+    ┃    • Image showcase with floating badges                ┃
+    ┃    • USP icons at bottom                                ┃
+    ┃    • Smooth tab transitions                             ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 4. ROOMS SECTION                                         ┃
+    ┃    • 3 room cards (King/Queen/Standard)                 ┃
+    ┃    • Modal with image slider                            ┃
+    ┃    • Detailed room information                          ┃
+    ┃    • Direct booking integration                         ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 5. PRICING COMPARISON ⭐ NEW                            ┃
+    ┃    • Side-by-side feature comparison                    ┃
+    ┃    • 3 room cards with check/cross indicators          ┃
+    ┃    • "Most Popular" badge                               ┃
+    ┃    • Direct booking per room                            ┃
+    ┃    • Best price guarantee banner                        ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 6. DINING SECTION                                        ┃
+    ┃    • Meal experience cards                              ┃
+    ┃    • Cuisine highlights                                 ┃
+    ┃    • Chef specialties                                   ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 7. AMENITIES SECTION                                     ┃
+    ┃    • 3 categories (In-Suite/Heritage/Modern)            ┃
+    ┃    • Icon-based features                                ┃
+    ┃    • Hover animations                                   ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 8. SPECIAL OFFERS ⭐ NEW                                ┃
+    ┃    • 3 package deals with pricing                       ┃
+    ┃    • Honeymoon Romance (20% OFF)                        ┃
+    ┃    • Extended Stay (UP TO 25% OFF)                      ┃
+    ┃    • Early Bird (UP TO 30% OFF)                         ┃
+    ┃    • WhatsApp booking buttons                           ┃
+    ┃    • Custom package request option                      ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 9. GALLERY SECTION                                       ┃
+    ┃    • 5-category filter system                           ┃
+    ┃    • Masonry grid layout                                ┃
+    ┃    • Lightbox with navigation                           ┃
+    ┃    • 14 high-quality images                             ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 10. VIRTUAL TOUR ⭐ NEW                                 ┃
+    ┃     • Video preview with play button                    ┃
+    ┃     • 4 tour highlights                                 ┃
+    ┃     • Stats bar (4 metrics)                             ┃
+    ┃     • Dark premium theme                                ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 11. REVIEWS SECTION                                      ┃
+    ┃     • Auto-playing carousel (5 reviews)                 ┃
+    ┃     • Star ratings & country flags                      ┃
+    ┃     • Source attribution                                ┃
+    ┃     • Dot navigation                                    ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 12. HELP DESK SECTION                                    ┃
+    ┃     • Support widget                                    ┃
+    ┃     • Quick contact options                             ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 13. FAQ SECTION                                          ┃
+    ┃     • Accordion-style questions                         ┃
+    ┃     • Common inquiries                                  ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 14. LOCATION SECTION                                     ┃
+    ┃     • Interactive map                                   ┃
+    ┃     • Directions & landmarks                            ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 15. CONTACT SECTION ✨ ENHANCED                         ┃
+    ┃     • Left: Contact info & OTA badges                   ┃
+    ┃     • Right: Booking form with:                         ┃
+    ┃       - Personal details                                ┃
+    ┃       - Date selection                                  ┃
+    ┃       - Room & guest selection                          ┃
+    ┃       - NEW: 3 Heritage Add-Ons (checkboxes)           ┃
+    ┃         • Guided Walk (+₹1,200)                         ┃
+    ┃         • Thali Dinner (+₹850)                          ┃
+    ┃         • Yoga Class (+₹500)                            ┃
+    ┃     • Success confirmation screen                       ┃
+    ┃     • WhatsApp integration                              ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        ↓
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ 16. FOOTER                                               ┃
+    ┃     • 4-column layout                                   ┃
+    ┃     • Brand info & tagline                              ┃
+    ┃     • Quick links                                       ┃
+    ┃     • Nearby attractions                                ┃
+    ┃     • Contact details & social                          ┃
+    ┃     • SEO keyword tags                                  ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+┌────────────────────────────────────────────────────────────────┐
+│ 🎨 DESIGN FEATURES                                             │
+├────────────────────────────────────────────────────────────────┤
+│ ✓ 4 Custom CSS Animations                                     │
+│ ✓ Smooth scroll-triggered reveals                             │
+│ ✓ Hover animations on all interactive elements                │
+│ ✓ Mobile-first responsive design                              │
+│ ✓ Consistent color palette (Maroon/Gold/Cream)                │
+│ ✓ Typography hierarchy (Playfair + Lato)                      │
+│ ✓ Glassmorphism effects                                       │
+│ ✓ Gradient backgrounds                                        │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ 📊 CONVERSION ELEMENTS                                         │
+├────────────────────────────────────────────────────────────────┤
+│ • Hero booking bar (2 CTAs)                                   │
+│ • Room booking buttons (3 CTAs)                               │
+│ • Pricing comparison booking (3 CTAs)                         │
+│ • Special offer buttons (4 CTAs)                              │
+│ • Contact form (1 main CTA)                                   │
+│ • Floating WhatsApp button (always visible)                   │
+│ • Footer booking link (1 CTA)                                 │
+│                                                                │
+│ TOTAL: 15+ conversion touchpoints!                            │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ 📱 RESPONSIVE BREAKPOINTS                                      │
+├────────────────────────────────────────────────────────────────┤
+│ Mobile:  320px - 639px   (sm breakpoint)                      │
+│ Tablet:  640px - 1023px  (md/lg breakpoints)                  │
+│ Desktop: 1024px+         (xl/2xl breakpoints)                 │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────┐
+│ 🎯 KEY ENHANCEMENTS SUMMARY                                    │
+├────────────────────────────────────────────────────────────────┤
+│ ⭐ NEW: PricingComparison component                           │
+│ ⭐ NEW: SpecialOffers component                               │
+│ ⭐ NEW: VirtualTour component                                 │
+│ ✨ ENHANCED: Hero with headline                               │
+│ ✨ ENHANCED: TrustBar with 6 indicators                       │
+│ ✨ ENHANCED: Contact with add-ons                             │
+│ 🎨 4 new CSS animations                                       │
+│ 📝 5 comprehensive documentation files                        │
+└────────────────────────────────────────────────────────────────┘
+
+╔════════════════════════════════════════════════════════════════╗
+║  Total: 18 Components | 3 New | 8 Enhanced | 7 Maintained    ║
+║  Status: ✅ Production Ready | ✅ TypeScript Clean            ║
+║  Performance: ⚡ Optimized | 📱 Fully Responsive             ║
+╚════════════════════════════════════════════════════════════════╝
