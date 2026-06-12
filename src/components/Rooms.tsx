@@ -23,7 +23,7 @@ import room2 from '../assets/images/gallery-2.jpg';
 import room3 from '../assets/images/gallery-3.jpg';
 import standardRoom from '../assets/images/standard-double-room.avif';
 import queenRoom from '../assets/images/queen-room.jpeg';
-import kingRoom from '../assets/images/king-room.avif';
+import kingRoom from '../assets/images/king-room.jpg';
 
 const rooms = [
   {
